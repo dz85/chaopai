@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>潮派國際</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link href="/css/bootstrap2.3.min.css" rel="stylesheet">
+  <link href="/css/chaopai.css?v=0.2" rel="stylesheet">
+
+{% block style %}
+
+{% endblock %}
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+</head>
+<body>
+{% block content %}
+
+{% endblock %}
+<div style="text-align:center"><a href="http://www.miitbeian.gov.cn/" style="font-size:smaller;color:rgb(192,192,192);">粤ICP备13049676号</a></div>
+</body>
+</html>
+
+<script type="text/javascript" src="/js/jquery.megamenu.js?v=0.3"></script>
+<script>
+
+$('.m-a').mousemove(function() {
+   $(".ai").stop(true,true).animate({right:"0px"})
+});
+
+$(".arrow").mouseleave(function(){
+    $(".ai").stop(true,true).animate({right:"120%"});
+  
+});
+
+$('.ccc').mousemove(function() {
+    $(".ai").stop(true,true).animate({right:"120%"});
+});
+
+var timeout         = 500;
+var closetimer    = 0;
+var ddmenuitem      = 0;
+
+function jsddm_open()
+{ jsddm_canceltimer();
+  jsddm_close();
+    $(".caidan").css("height", "350px");
+  ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');
+}
+
+function jsddm_close()
+{ 
+  $(".caidan").css("height", "45px");
+  if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
+
+function jsddm_timer()
+{ closetimer = window.setTimeout(jsddm_close, timeout);}
+
+function jsddm_canceltimer()
+{ 
+  if(closetimer)
+    { 
+      window.clearTimeout(closetimer);
+      closetimer = null;
+    }
+}
+
+$(document).ready(function()
+{ 
+  $('#jsddm > li').bind('mouseover', jsddm_open);
+  $('#jsddm > li').bind('mouseout',  jsddm_timer);
+});
+
+document.onclick = jsddm_close;
+
+
+</script>
+{% block js %}
+
+{% endblock %}
+
+

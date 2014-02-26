@@ -1,0 +1,57 @@
+
+{% extends "chaopai/views/templates/admin-base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <h2>修改</h2>
+  <form class="form-horizontal" action="/admin/edit-product" method="POST">
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">名子</label>
+    <div class="controls">
+      <input type="text" name="name" value="{{p.name}}" placeholder="名子">
+      <input type="hidden" name="types" value="product" >
+       <input type="hidden" name="id" value="{{p.id}}" >
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">类型</label>
+    <div class="controls">
+      <select name="cat">
+        <option {% ifequal p.cat "窗簾" %}selected{% endifequal %}>窗簾</option>
+        <option {% ifequal p.cat "布藝" %}selected{% endifequal %}>布藝</option>
+        <option {% ifequal p.cat "墻紙" %}selected{% endifequal %}>墻紙</option>
+        <option {% ifequal p.cat "地毯" %}selected{% endifequal %}>地毯</option>
+        <option {% ifequal p.cat "工藝品" %}selected{% endifequal %}>工藝品</option>
+        <option {% ifequal p.cat "家具" %}selected{% endifequal %}>家具</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">介绍</label>
+    <div class="controls" >
+      <textarea name="intro">{{p.intro}}</textarea>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      
+      <button type="submit" class="btn">修改</button>
+    </div>
+  </div>
+</form>
+</div>
+
+{%endblock%}
+
+{% block js %}
+
+
+<script>
+     $("#{{menu}}").addClass("active")   
+</script>
+
+
+{% endblock%}

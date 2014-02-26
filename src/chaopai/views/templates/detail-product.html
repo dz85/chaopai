@@ -1,0 +1,51 @@
+
+{% extends "chaopai/views/templates/admin-base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <h2>管理圖片</h2>
+  <a class="btn btn-large" href="/admin/add-product-pic?id={{id}}&menu={{menu}}" type="button" id="add-product">添加</a>
+   <table class="table">
+    <thead>
+      <tr>
+     
+        <th>提示信息</th>
+        
+        <th></th>
+
+        <th></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for x in list %}
+      <tr>
+        <td>
+          {{x.title}}
+        </td>
+        
+        <td>
+          <img src="/upload/{{x.uuid}}">
+         
+        </td>
+        <td>
+           <a href="/admin/del-product-pic?id={{x.id}}&url=/admin/detail-product%3fid={{id}}%26menu={{menu}}" class="btn">删除</a>
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+   </table>
+</div>
+
+{%endblock%}
+
+{% block js %}
+
+
+<script>
+     $("#{{menu}}").addClass("active")   
+</script>
+
+
+{% endblock%}

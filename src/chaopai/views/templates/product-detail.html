@@ -1,0 +1,71 @@
+
+{% extends "chaopai/views/templates/base.html" %}
+{%block style%}
+<STYLE TYPE="text/css" MEDIA=screen>
+ .top {
+  margin-top:66px;
+ }
+ </STYLE>
+{%endblock%}
+
+{% block content %}
+
+  <div class="wrap container">
+    <div class="content container top">
+     
+       <div class="caidan cccc span1 shit-bg" style="top:125px;width:860px;margin-left:0px;height: 43px;">
+       
+                 <ul class="nav nav-pills">
+                  <li class="disabled" style="margin-top:0px;left:762px;position:absolute;">
+                     <a href="/"><img src="/chaopai-img/logo.png" ></a>
+                  </li>
+                  <li class="disabled" style="margin-top:13px;margin-left:20px;">
+                    <img src="/chaopai-img/right1.png" >
+                  </li>
+                  {%for x in list%}
+                    <li class="disabled m detail-m  " style="margin-left:0px;height:43px;">
+                      <a href="javascript:void(0)" onclick="javascript:$('.cycle-slideshow').cycle('goto', {{x.index}} -1);" class="" style="margin-top:9px;">
+                        {{x.index}}
+                      </a>
+                    </li>
+                  {%endfor%}
+                  
+                    <li class="disabled m detail-m  " style="margin-left:30px;height:43px;">
+                      <a href="{{menu}}" class="" style="margin-top:9px;">
+                          <img src="/chaopai-img/menu-back.png">
+                      </a>
+                    </li>
+              
+            
+                 </ul>
+              </div> 
+     
+      <div class="about-me-bg" style="margin-top:0px;z-index:84;">
+              
+        <div class="cycle-slideshow"   data-cycle-speed="1500" data-cycle-manual-speed="300">
+           {%for x in list%}
+            <img src="/upload/{{x.uuid}}"  data-cycle-fx="scrollHorz" >
+           {%endfor%}
+        </div>
+             
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="/js/jquery.cycle2.min.js"></script>
+<script>
+ jQuery(function(){
+        var SelfLocation = window.location.href.split('?');
+        switch (SelfLocation[1]) {
+          case "justify_right":
+            jQuery(".megamenu").megamenu({ 'justify':'right' });
+            break;
+          case "justify_left":
+          default:
+            jQuery(".megamenu").megamenu();
+        }
+      });
+</script>
+{% endblock %}

@@ -1,0 +1,152 @@
+
+{% extends "chaopai/views/templates/base.html" %}
+
+{% block style %}
+
+{% endblock%}
+
+{% block content %}
+
+
+  <div class="wrap container ">
+    <div class="content container top-64">
+    
+      {% include "chaopai/views/templates/menu.html" %} 
+      <div class="about-me-bg">
+            
+        <div class="row">
+          <div class="span2 cat">
+            <p class="t-up text-center">窗   簾<p>
+            <p class="t-down text-center">&nbsp&nbspCurtain</p>
+            <div class="line" style="height:{{curtain-l}}px">
+
+              {%for x in curtain%}
+                <div class="dian" id="curtain_a_{{x.index}}">
+                  <a href="/detail?id={{x.id}}&menu=/product" class="pop-c" id="curtain_a_{{x.index}}" style="margin-top:{{x.index  }}px"  data-toggle="popover" data-placement="right" data-content="" title="" data-original-title=""><img src="/chaopai-img/about-block.png"></a>
+                  <a href="/detail?id={{x.id}}&menu=/product" >
+                  <div class="popover fade right in p-c" id="curtain_a_{{x.index}}_div" style="top:{{x.index}}px; left: 75px; display: none;margin-top:30px">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">{{x.name}}</h3>
+                    <div class="popover-content">{{x.intro}}</div>
+                  </div>
+                  </a>
+                </div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="span2 cat">
+             <p class="t-up text-center">布   藝<p>
+            <p class="t-down text-center">&nbsp&nbspFabire</p>
+            <div class="line" style="height:{{fabire-l}}px">
+
+              {%for x in fabire%}
+                <div class="dian" id="fabire_a_{{x.index}}">
+                  <a href="/detail?id={{x.id}}&menu=/product" class="pop-c" id="fabire_a_{{x.index}}" style="margin-top:{{x.index  }}px"  data-toggle="popover" data-placement="right" data-content="" title="" data-original-title=""><img src="/chaopai-img/about-block.png"></a>
+                  <a href="/detail?id={{x.id}}&menu=/product" >
+                  <div class="popover fade right in p-c" id="fabire_a_{{x.index}}_div" style="top:{{x.index}}px; left: 210px; display: none;margin-top:30px">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">{{x.name}}</h3>
+                    <div class="popover-content">{{x.intro}}</div>
+                  </div>
+                </a>
+                </div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="span2 cat">
+             <p class="t-up text-center">墻   紙<p>
+            <p class="t-down text-center">&nbsp&nbspWallpaper</p>
+            <div class="line" style="height:{{wallpaper-l}}px">
+
+              {%for x in wallpaper%}
+                <div class="dian" id="wallpaper_a_{{x.index}}">
+                  <a href="/detail?id={{x.id}}&menu=/product" class="pop-c" id="wallpaper_a_{{x.index}}" style="margin-top:{{x.index  }}px"  data-toggle="popover" data-placement="right" data-content="" title="" data-original-title=""><img src="/chaopai-img/about-block.png"></a>
+                  <a href="/detail?id={{x.id}}&menu=/product" >
+                    <div class="popover fade right in p-c" id="wallpaper_a_{{x.index}}_div" style="top:{{x.index}}px; left: 355px; display: none;margin-top:30px">
+                      <div class="arrow"></div>
+                      <h3 class="popover-title">{{x.name}}</h3>
+                      <div class="popover-content">{{x.intro}}</div>
+                    </div>
+                  </a>
+                </div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="span2 cat">
+             <p class="t-up text-center">地   毯<p>
+            <p class="t-down text-center">&nbsp&nbspCarpet</p>
+            <div class="line" style="height:{{carpet-l}}px">
+
+              {%for x in carpet%}
+                <div class="dian" id="carpet_a_{{x.index}}">
+                  <a href="/detail?id={{x.id}}&menu=/product" class="pop-c" id="carpet_a_{{x.index}}" style="margin-top:{{x.index  }}px"  data-toggle="popover" data-placement="right" data-content="" title="" data-original-title=""><img src="/chaopai-img/about-block.png"></a>
+                  <a href="/detail?id={{x.id}}&menu=/product" >
+                  <div class="popover fade right in p-c" id="carpet_a_{{x.index}}_div" style="top:{{x.index}}px; left: 500px; display: none;">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">{{x.name}}</h3>
+                    <div class="popover-content">{{x.intro}}</div>
+                  </div>
+                  </a>
+                </div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="span2 cat">
+             <p class="t-up text-center">工藝品<p>
+            <p class="t-down text-center">&nbsp&nbspCrafts</p>
+            <div class="line" style="height:{{crafts-l}}px">
+
+              {%for x in crafts%}
+                <div class="dian" id="crafts_a_{{x.index}}">
+                  <a href="/detail?id={{x.id}}&menu=/product" class="pop-c" id="crafts_a_{{x.index}}" style="margin-top:{{x.index  }}px"  data-toggle="popover" data-placement="right" data-content="" title="" data-original-title=""><img src="/chaopai-img/about-block.png"></a>
+                   <a href="/detail?id={{x.id}}&menu=/product" >
+                  <div class="popover fade right in p-c" id="crafts_a_{{x.index}}_div" style="top:{{x.index}}px; left: 645px; display: none;margin-top:30px">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">{{x.name}}</h3>
+                    <div class="popover-content">{{x.intro}}</div>
+                  </div>
+                  </a>
+                </div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="span2 cat">
+                         <p class="t-up text-center">家    具<p>
+            <p class="t-down text-center" >&nbsp&nbspFurniture</p>
+            <div class="line" style="height:{{furniture-l}}px">
+
+              {%for x in furniture%}
+                <div class="dian" id="furniture_a_{{x.index}}">
+                  <a href="/detail?id={{x.id}}&menu=/product" class="pop-c" id="furniture_a_{{x.index}}" style="margin-top:{{x.index  }}px"  data-toggle="popover" data-placement="right" data-content="" title="" data-original-title=""><img src="/chaopai-img/about-block.png"></a>
+                  <a href="/detail?id={{x.id}}&menu=/product" >
+                  <div class="popover fade right in p-c" id="furniture_a_{{x.index}}_div" style="top:{{x.index}}px; left: 790px;margin-top:12px; display: none;margin-top:30px">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">{{x.name}}</h3>
+                    <div class="popover-content">{{x.intro}}</div>
+                  </div>
+                 </a>
+                </div>
+              {%endfor%}
+            </div>
+          </div>
+        </div>
+             
+      </div>
+       
+    </div>
+    <div class="map">
+    </div>
+  </div>
+
+{% endblock %}
+{%block js%}
+<script>
+$(".ai").stop(true,true).delay(5000).animate({right:"800px"})
+$('.pop-c').mousemove(function(){
+  $("#"+this.id+"_div").show();
+});
+$('.dian').mouseleave(function(){
+  $("#"+this.id+"_div").hide();
+});
+</script>
+{%endblock%}

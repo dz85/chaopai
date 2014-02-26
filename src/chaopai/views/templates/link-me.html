@@ -1,0 +1,30 @@
+
+{% extends "chaopai/views/templates/base.html" %}
+
+
+
+{% block content %}
+
+
+<div class="wrap container">
+    <div class="content container top-64">
+
+        {% include "chaopai/views/templates/menu.html" %} 
+
+        <div class="cycle-slideshow"   data-cycle-speed="1500" data-cycle-manual-speed="300">
+            <div class="usercss">
+
+                {{link-info}}
+
+            </div>
+            <img src="/chaopai-img/about-bg.png">
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+{%block js%}
+{%endblock%}

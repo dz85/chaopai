@@ -1,0 +1,39 @@
+
+{% extends "chaopai/views/templates/admin-base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <form action="/admin/save-linke-me" method="POST">
+    <textarea   name="v" id="editor_id"  style="width:700px;height:300px;" >  {{about-me}}</textarea>
+    <input type="hidden" name="k" value="about-me">
+    <input type="submit"/>
+
+  </form>
+</div>
+
+{%endblock%}
+
+{% block js %}
+
+<script charset="utf-8" src="/js/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="/js/zh_CN.js"></script>
+<script>
+/*
+        var editor;
+       
+
+        KindEditor.ready(function(K) {
+          K.create('#editor_id', {
+                  uploadJson : '/upload',
+                  fileManagerJson : '../jsp/file_manager_json.jsp',
+                  allowFileManager : false
+          });
+        
+        })
+*/
+        $("#about-me").addClass("active");
+</script>
+
+
+{% endblock%}

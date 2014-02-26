@@ -1,0 +1,28 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Dir
+##############
+/target
+/lib
+/classes
+/checkouts
+pom.xml
+*.jar
+*.class
+/.lein-*
+/.env
+
+/resources/public/upload/*
+!/resources/public/upload/.gitkeep
+
+*chaoliu*
+*chaoliu*/

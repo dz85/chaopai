@@ -1,0 +1,43 @@
+
+{% extends "chaopai/views/templates/admin-base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <h2>添加图片</h2>
+  <form class="form-horizontal" action="/admin/add-product-pic" method="POST" enctype="multipart/form-data">
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">提示信息</label>
+    <div class="controls">
+      <input type="text" name="title" placeholder="提示信息">
+      <input type="hidden" name="id"  value="{{id}}">
+      <input type="hidden" name="menu"  value="{{menu}}">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">图片</label>
+    <div class="controls">
+      <input type="file" name="imgFile"  />
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      
+      <button type="submit" class="btn">添加</button>
+    </div>
+  </div>
+</form>
+</div>
+
+{%endblock%}
+
+{% block js %}
+
+
+<script>
+     $("#{{menu}}").addClass("active")   
+</script>
+
+
+{% endblock%}

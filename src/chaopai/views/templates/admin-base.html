@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yizhu</title>
+  
+
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <style type="text/css">
+     body {
+          padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+      </style>
+
+  {%block style%}
+  {%endblock%}
+</head>
+<body>
+  
+  
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+       <div class="navbar-inner">
+         <div class="container">
+           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </a>
+           <a class="brand" href="/admin-chaopai">潮派國際</a>
+           <div class="nav-collapse collapse">
+             <ul class="nav">
+               <li id="link-me" class=""><a href="/admin/link-me">聯系我們</a></li>
+               <li id="about-me" class=""><a href="/admin/about-me">企業介紹</a></li>
+               <li id="product" class=""><a href="/admin/product">產品中心</a></li>
+               <li id="service" class=""><a href="/admin/service">服務項目</a></li>
+               <li class=""><a href="/admin-chaopai">退出</a></li>
+             </ul>
+           </div><!--/.nav-collapse -->
+         </div>
+       </div>
+     </div>
+    <div class="container"> 
+    {%block content%}
+    {%endblock%}
+    </div>
+   
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Modal header</h3>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+
+</body>
+</html>
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+ {%block js%}
+    {%endblock%}
+

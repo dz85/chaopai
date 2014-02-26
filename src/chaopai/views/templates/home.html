@@ -1,0 +1,73 @@
+
+{% extends "chaopai/views/templates/base.html" %}
+{%block style%}
+<STYLE TYPE="text/css" MEDIA=screen>
+ .top {
+  margin-top:66px;
+ }
+ </STYLE>
+{%endblock%}
+
+{% block content %}
+
+  <div class="slider0">
+    <div class="container">
+      
+      <p class="text-center v-c">Welcome to cp-dcc.com</p>
+    </div>
+  </div>
+  <div class="slider1 hide">
+    <div class="container">
+      <img src="/chaopai-img/slider2.png">
+    </div>
+  </div>
+  <div class="wrap container hide">
+    <div class="content container top-64">
+    
+      {% include "chaopai/views/templates/menu.html" %} 
+      <div class="about-me-bg" style="margin-top:0px;z-index:84;">
+              
+        <div class="cycle-slideshow"  data-cycle-fx="fadeOut"  data-cycle-speed="1500" data-cycle-manual-speed="300">
+          <img src="/chaopai-img/carousel/page000.jpg"   >
+          <img src="/chaopai-img/carousel/page001.jpg"  >
+          <img src="/chaopai-img/carousel/page002.jpg" >
+          <img src="/chaopai-img/carousel/page003.jpg"  >
+          <img src="/chaopai-img/carousel/page004.jpg"  >
+          <img src="/chaopai-img/carousel/page005.jpg" >
+          <img src="/chaopai-img/carousel/page006.jpg"  >
+          <img src="/chaopai-img/carousel/page007.jpg"  >
+          <img src="/chaopai-img/carousel/page008.jpg"  >
+          <img src="/chaopai-img/carousel/page009.jpg"  >
+          <img src="/chaopai-img/carousel/page011.jpg" >
+          <img src="/chaopai-img/carousel/page012.jpg" >
+
+        </div>
+             
+      </div>
+        <div class="carousel-inner">
+          <div class="item active">
+         
+          </div>
+        </div>
+    
+      </div>
+    
+  </div>
+  
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="/js/jquery.cycle2.min.js"></script>
+<script>
+var i =  0;
+var c_l = ["fade", "fadeout", "none", "scrollHorz"];
+
+$(".ai").stop(true,true).delay(20000).animate({right:"800px"})
+$('.slider0').fadeOut(3000) ; 
+$('.slider1').delay(3000).fadeIn(2000) ;      // 300 毫秒
+$('.slider1').fadeOut(5000) ; 
+$('.wrap').delay(5000).fadeIn(2000);   
+
+//for 
+ 
+</script>
+{% endblock %}

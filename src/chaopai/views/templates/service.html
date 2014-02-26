@@ -1,0 +1,112 @@
+
+{% extends "chaopai/views/templates/base.html" %}
+
+{% block style %}
+{% endblock%}
+
+{% block content %}
+
+
+  <div class="wrap container ">
+    <div class="content container top-64">
+  
+      {% include "chaopai/views/templates/menu.html" %} 
+      <div class="about-me-bg">
+            
+        <div class="row service">
+   
+          <div class="span2 cat">
+             <p class="t-up text-center">酒   店<p>
+            <p class="t-down text-center">&nbsp&nbspHotel</p>
+            <div class="line" style="height:{{hotel-l}}px">
+
+              {%for x in hotel%}
+                <div class="dian" id="hotel_a_{{x.index}}">
+                  <a href="/detail?id={{x.id}}&menu=/service" class="pop-c" id="hotel_a_{{x.index}}" style="margin-top:{{x.index  }}px"  data-toggle="popover" data-placement="right" data-content="" title="" data-original-title=""><img src="/chaopai-img/about-block.png"></a>
+                  <a href="/detail?id={{x.id}}&menu=/service"> 
+                  <div class="popover fade right in p-c" id="hotel_a_{{x.index}}_div" style="top:{{x.index}}px; left: 105px;margin-top:30px;display: none;">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">{{x.name}}</h3>
+                    <div class="popover-content">{{x.intro}}</div>
+                  </div>
+                   </a>
+                </div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="span2 cat">
+            <p class="t-up text-center">別   墅<p>
+            <p class="t-down text-center">&nbsp&nbspVilla</p>
+            <div class="line" style="height:{{villa-l}}px">
+
+              {%for x in villa%}
+                <div class="dian" id="villa_a_{{x.index}}">
+                  <a href="/detail?id={{x.id}}&menu=/service" class="pop-c" id="villa_a_{{x.index}}" style="margin-top:{{x.index  }}px"  data-toggle="popover" data-placement="right" data-content="" title="" data-original-title=""><img src="/chaopai-img/about-block.png"></a>
+                  <a href="/detail?id={{x.id}}&menu=/service" >
+                  <div class="popover fade right in p-c" id="villa_a_{{x.index}}_div" style="top:{{x.index}}px; left: 320px; display: none;margin-top:30px">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">{{x.name}}</h3>
+                    <div class="popover-content">{{x.intro}}</div>
+                  </div>
+                   </a>
+                </div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="span2 cat">
+             <p class="t-up text-center">辦公空間<p>
+            <p class="t-down text-center">&nbsp&nbspOffice space</p>
+            <div class="line" style="height:{{officespace-l}}px">
+
+              {%for x in officespace%}
+                <div class="dian" id="officespace_a_{{x.index}}">
+                  <a href="/detail?id={{x.id}}&menu=/service" class="pop-c" id="officespace_a_{{x.index}}" style="margin-top:{{x.index  }}px"  data-toggle="popover" data-placement="right" data-content="" title="" data-original-title=""><img src="/chaopai-img/about-block.png"></a>
+                  <div class="popover fade right in p-c" id="officespace_a_{{x.index}}_div" style="top:{{x.index}}px; left: 540px; display: none;margin-top:30px">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">{{x.name}}</h3>
+                    <div class="popover-content">{{x.intro}}</div>
+                  </div>
+                </div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="span2 cat">
+            <p class="t-up text-center">會    所<p>
+            <p class="t-down text-center">&nbsp&nbspClubhouse</p>
+            <div class="line" style="height:{{clubhouse-l}}px">
+
+              {%for x in clubhouse%}
+                <div class="dian" id="clubhouse_a_{{x.index}}">
+                  <a href="/detail?id={{x.id}}&menu=/service" class="pop-c" id="clubhouse_a_{{x.index}}" style="margin-top:{{x.index  }}px"  data-toggle="popover" data-placement="right" data-content="" title="" data-original-title=""><img src="/chaopai-img/about-block.png"></a>
+                  <a href="/detail?id={{x.id}}&menu=/service" >
+                  <div class="popover fade right in p-c" id="clubhouse_a_{{x.index}}_div" style="top:{{x.index}}px; left: 760px;margin-top:22px; display: none;">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">{{x.name}}</h3>
+                    <div class="popover-content">{{x.intro}}</div>
+                  </div>
+                  </a>
+                </div>
+              {%endfor%}
+            </div>
+          </div>
+        </div>
+             
+      </div>
+    </div>
+    
+    <div class="city">
+    </div>
+  </div>
+
+{% endblock %}
+{%block js%}
+<script>
+$(".m-m").stop(true,true).delay(5000).animate({right:"800px"})
+$('.pop-c').mousemove(function(){
+  $("#"+this.id+"_div").show();
+});
+$('.dian').mouseleave(function(){
+  $("#"+this.id+"_div").hide();
+});
+</script>
+{%endblock%}

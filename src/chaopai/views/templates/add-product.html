@@ -1,0 +1,56 @@
+
+{% extends "chaopai/views/templates/admin-base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <h2>添加产品</h2>
+  <form class="form-horizontal" action="/admin/add-product" method="POST">
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">名子</label>
+    <div class="controls">
+      <input type="text" name="name" placeholder="名子">
+      <input type="hidden" name="types" value="product" >
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">类型</label>
+    <div class="controls">
+      <select name="cat">
+        <option>窗簾</option>
+        <option>布藝</option>
+        <option>墻紙</option>
+        <option>地毯</option>
+        <option>工藝品</option>
+        <option>家具</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">介绍</label>
+    <div class="controls" >
+      <textarea name="intro"></textarea>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      
+      <button type="submit" class="btn">添加</button>
+    </div>
+  </div>
+</form>
+</div>
+
+{%endblock%}
+
+{% block js %}
+
+
+<script>
+     $("#product").addClass("active")   
+</script>
+
+
+{% endblock%}
